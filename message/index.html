@@ -9,10 +9,10 @@
 <meta name="keywords" content="博客系统,博客CMS" />
 <meta name="description" content="WDJA网站内容管理系统是一套可对现有模块进行扩充与克隆的PHP开源CMS系统，采用UTF-8编码，采取语言/代码/程序 两两分离的技术模式，全面使用了模板包与语言包结构，为用户的修改提供方便，网站内容的每一个角落都可以在后台予以管理，是一套非常适合用做系统建站或者进行二次开发的开源免费CMS系统。" />
 <link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/swiper/swiper-4.2.2.min.css" />
-<link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/layout.css?s0k" />
-<link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/global.css?s0k" />
+<link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/layout.css?1cp" />
+<link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/global.css?1cp" />
 <script language="javascript" src="https://www.wdja.net/common/images/js/jquery-1.7.min.js"></script>
-<script type="text/javascript" src="https://www.wdja.net/common/images/js/main.js?s0k"></script>
+<script type="text/javascript" src="https://www.wdja.net/common/images/js/main.js?1cp"></script>
 <script type="text/javascript" src="https://www.wdja.net/common/images/theme/v2/swiper/swiper-4.2.2.min.js"></script>
 <link rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/aos/aos.css" />
 </head>
@@ -59,7 +59,6 @@
     </div>
     </section>
 </header>
-
 <section id="middle">
   <div id="middleContent">
     <div class="content">
@@ -107,6 +106,7 @@
     <div class="clear"></div>
   </div>
 </section>
+    <script src="https://api.wdja.net/ip.php"></script>
     <script type="text/javascript">
       function send(){
        if(is_null('name') || is_null('mobile') || is_null('email') || is_null('content') ) return;
@@ -116,9 +116,11 @@
         var domain = document.domain;
         var port = window.location.port ? window.location.port : 80;
         var url= domain + ':' +port
+        var ip = getip.cip;
         xhr.open('POST', '//api.wdja.net/message/add.php');
         formData = new FormData();
         formData.append('url', url);
+        formData.append('ip', ip);
         formData.append('name', get_value('name'));
         formData.append('sex', get_value('sex'));
         formData.append('mobile', get_value('mobile'));
@@ -138,8 +140,9 @@
               clear_value('address');
               clear_value('title'); 
               clear_value('content'); 
-              alert('留言提交成功')
+              alert('留言提交成功');
             }
+            else alert('留言提交失败');
           }
         }
       }
@@ -228,4 +231,4 @@ var _hmt = _hmt || [];
 </script>
 </body>
 </html>
-<!--WDJA(1.0), Processed in 36.520 ms-->
+<!--WDJA(1.0), Processed in 39.631 ms-->
