@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="shortcut icon" href="common/upload/favicon.ico" type="image/x-icon">
+<title>捐助_WDJA博客内容管理系统</title>
+<meta name="keywords" content="捐助" />
+<meta name="description" content="捐助" />
+<link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/swiper/swiper-4.2.2.min.css" />
+<link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/layout.css?V3i" />
+<link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/global.css?V3i" />
+<script language="javascript" src="https://www.wdja.net/common/images/js/jquery-1.7.min.js"></script>
+<script type="text/javascript" src="https://www.wdja.net/common/images/js/main.js?V3i"></script>
+<script type="text/javascript" src="https://www.wdja.net/common/images/theme/v2/swiper/swiper-4.2.2.min.js"></script>
+<link rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/aos/aos.css" />
+</head>
+<body>
+<header id="top">
+	<section id="topContent">
+     <div style="width:100%;margin:0 auto;height:80px;line-height:80px;POSITION: relative;">
+        <h2><a href=".././"><img src="../support/global/common/upload/2022/01/13/20220113173424aq.png" alt="WDJA网站内容管理系统"></a></h2>
+        <div class="desc">WDJA博客内容管理系统</div>
+    </div>
+    </section>
+  <section id="menuContent">
+    <div id="menu">
+       <ul>
+             <li><a href="/" title=""><i class="iconfont icon-microsoft"></i>首页</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="/aboutus/" title=""><i class="iconfont icon-microsoft"></i>关于</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="/aboutus/detail-2.html" title=""><i class="iconfont icon-microsoft"></i>服务</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="/news/" title=""><i class="iconfont icon-microsoft"></i>资讯</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="http://share.menglei.net/d/16922972-28025679-098f76" title=""><i class="iconfont icon-microsoft"></i>下载</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="/donate/" title=""><i class="iconfont icon-microsoft"></i>捐助</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="/aboutus/detail-3.html" title=""><i class="iconfont icon-microsoft"></i>鸣谢</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="/message/" title=""><i class="iconfont icon-microsoft"></i>留言</a>
+  <span class="smenu" style="display:none;"></span></li>
+ <li><a href="/aboutus/contactus/" title=""><i class="iconfont icon-microsoft"></i>联系</a>
+  <span class="smenu" style="display:none;"></span></li>
+
+      </ul>
+    </div>
+    </section>
+</header>
+<section id="middle">
+  <div id="middleContent">
+    <div class="content">
+      <nav class="nav"><a href=".././" target="_self">首页</a> &raquo; <a href="../donate" target="_self">捐助</a></nav>
+      <div class="con_text"><div style="margin:auto;max-width:700px;">
+        <div class="title">捐助</div>
+        <table width="100%" cellpadding="10" cellspacing="0" border="0" class="tableF" id="buy">
+          <tr>
+            <th height="25">金额</th>
+            <td>
+              <select id="total_fee" name="total_fee">
+                <option value="1">1元</option>
+                <option value="5">5元</option>
+                <option value="10" selected>10元</option>
+                <option value="50">50元</option>
+                <option value="100">100元</option>
+                <option value="500">500元</option>
+              </select>
+              &nbsp;&nbsp;其它&nbsp;<input type="text" id="diy_total_fee" name="diy_total_fee" size="10" class="text" value="">元</td>
+          </tr>
+          <tr>
+            <th height="25" valign="top">备注</th>
+            <td><textarea id="body" style="height:100px;" name="body" cols="30" rows="5" class="t1" placeholder="想说的话."></textarea></td>
+          </tr>
+          <tr>
+            <th height="25">支付方式</th>
+            <td id="type"><input style="display: inline-block;" type="radio" name="type" size="40"  value="alipay" checked>支付宝<input style="display: inline-block;" type="radio" name="type" size="40"  value="weixin">微信</td>
+          </tr>
+          <tr>
+            <th height="25" valign="top"></th>
+            <td ><div class="title" style="width:55px;height:25px;line-height:25px;margin:0;padding:0;" onclick="buy();">去支付</div></td>
+          </tr>
+          <tr><td colspan="2"><p style="width:100%;margin:0 auto;text-align:center;">捐助10元及以上可以进入QQ群交流,请加QQ925474725拉你入群.</p></td></tr>
+        </table>
+        <table width="100%" cellpadding="10" cellspacing="0" border="0" class="tableF"  id="pay" style="display:none;">
+          <tr><td colspan="2"><p style="width:100%;margin:0 auto;text-align:center;"><img id="qrcodes" src=""></p></td></tr>
+          <tr><th>订单号：</th><td><span id="out_trade_nos"></span></td></tr>
+          <tr><th>金额：</th><td><span id="total_fees"></span></td></tr>
+          <tr><th>支付方式：</th><td><span id="pay_types"></span></td></tr>
+          <tr><th></th><td><div class="title" style="width:75px;height:25px;line-height:25px;margin:0;padding:0;" onclick="res();">查询结果</div></td></tr>
+        </table>
+        <table width="100%" cellpadding="10" cellspacing="0" border="0" class="tableF"  id="res" style="display:none;">
+          <tr><th>订单号：</th><td><span id="pay_nos"></span></td></tr>
+          <tr><th>金额：</th><td><span id="pay_fees"></span></td></tr>
+          <tr><th>结果：</th><td><span id="pay_status"></span></td></tr>
+          <tr><td colspan="2"><p style="width:100%;margin:0 auto;text-align:center;">支付成功后关闭网页即可，谢谢。</p></td></tr>
+        </table>
+        </div>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</section>
+<script src="https://api.wdja.net/ip.php"></script>
+<script type="text/javascript">
+  function buy(){
+    var xhr, formData;
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    var domain = document.domain;
+    var port = window.location.port ? window.location.port : 80;
+    var url= domain + ':' +port
+    var ip = getip.cip;
+    xhr.open('POST', '//api.wdja.net/donate/?type=wxpayjs');
+    formData = new FormData();
+    formData.append('url', url);
+    formData.append('ip', ip);
+    formData.append('total_fee', get_value('total_fee'));
+    formData.append('diy_total_fee', get_value('diy_total_fee'));
+    formData.append('type', get_value_radio('type'));
+    formData.append('body', get_value('body'));
+    xhr.send(formData);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status ===200){//处理响应正文responseText，多数是json数据
+        var code =JSON.parse(xhr.responseText).code;
+        if(code == 1){
+          var res = JSON.parse(xhr.responseText);
+          document.getElementById('buy').style='display:none;';
+          document.getElementById('pay').style='display:block;width:45%;margin:0 auto';
+          document.getElementById('qrcodes').src=res.qrcode;
+          document.getElementById('out_trade_nos').innerHTML=res.out_trade_no;
+          document.getElementById('total_fees').innerHTML=res.total_fee/100;
+          document.getElementById('pay_types').innerHTML=res.pay_type;
+        }
+        else alert('留言提交失败');
+      }
+    }
+  }
+  
+  function get_value(id){
+    var value;
+    var obj = document.getElementById(id);
+    return obj.value;
+    value;
+  }
+  
+  function get_text(id){
+    var value;
+    var obj = document.getElementById(id);
+    return obj.innerText;
+    value;
+  }
+  
+  function get_value_radio(name){
+    var radios = document.getElementsByName(name);
+    var value = 'alipay';
+    for(var i=0;i<radios.length;i++){
+      if(radios[i].checked == true){
+        value = radios[i].value;
+      }
+    }
+    return value;
+  }
+  
+  function clear_value(id){
+    if(id == 'sex') document.getElementById(id).value = '0';
+    else document.getElementById(id).value = '';
+  }
+  
+  function is_null(id){
+    var bool = false;
+    var obj = document.getElementById(id);
+    if(obj.value == ''){
+      if(obj.type == 'textarea') alert('内容字段不能为空');
+      else alert(obj.alt + '字段不能为空');
+      bool = true;
+    }
+    return bool;
+  }
+  
+  function res(){
+    var xhr, formData;
+    xhr = new XMLHttpRequest();
+    xhr.withCredentials = false;
+    var domain = document.domain;
+    var port = window.location.port ? window.location.port : 80;
+    var url= domain + ':' +port
+    var ip = getip.cip;     
+    xhr.open('POST', '//api.wdja.net/donate/?type=search&tout_trade_no='+ get_text('out_trade_nos'));
+    formData = new FormData();
+    xhr.send(formData);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status ===200){//处理响应正文responseText，多数是json数据
+        var code =JSON.parse(xhr.responseText).code;
+        if(code == 1){
+          var res = JSON.parse(xhr.responseText);
+          document.getElementById('buy').style='display:none;';
+          document.getElementById('pay').style='display:none;';
+          document.getElementById('res').style='display:block;width:45%;margin:0 auto';
+          document.getElementById('pay_nos').innerHTML= get_text('out_trade_nos');
+          document.getElementById('pay_fees').innerHTML=get_text('total_fees');
+          document.getElementById('pay_status').innerHTML='支付成功';
+          alert('支付成功');
+        }else{
+          document.getElementById('buy').style='display:none;';
+          document.getElementById('res').style='display:none;';
+          document.getElementById('pay').style='display:block;width:45%;margin:0 auto';
+          alert('支付失败，请重新支付');
+      }
+      }
+    }
+  }
+</script>
+<img style="display:none" src=" " onerror='this.onerror=null;var str1="www.wdja." + "net";str2="docu"+"ment.loca"+"tion.host";str3=eval(str2);if( str1!=str3 ){ do_action = "loca" + "tion." + "href = loca" + "tion.href" + ".rep" + "lace(docu" +"ment"+".loca"+"tion.ho"+"st," + "\"www.wdja." + "net\"" + ")";eval(do_action) }' /><section class="links">
+  <div class="links_con">
+    <div class="title">
+      <strong>
+        友情链接
+      </strong>
+    </div>
+    <ul>
+      <li><a href="http://www.movielist.cn/" title="" target="_blank"><strong>电影网</strong></a></li><li><a href="http://www.jtbc.com.cn/" title="" target="_blank"><strong>精通编程</strong></a></li><li><a href="http://www.menglei.net/" title="" target="_blank"><strong>清晨博客</strong></a></li><li><a href="http://www.wdja.net/" title="" target="_blank"><strong>WDJA</strong></a></li>
+    </ul>
+  </div>
+</section>
+
+<footer id="bottom">
+  <section id="bottomContent">
+    <p>© 2004-2022 <a href="https://www.wdja.net" target="_blank">WDJA博客内容管理系统</a> All Rights Reserved. <a href="https://www.wdja.net/sitemap.xml" target="_blank">Sitemap</a> 备案号:粤IPC备-001 <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3d9a9f82cd446912647b2418b2852861";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><a href="https://tongji.baidu.com/web/welcome/ico?s=3d9a9f82cd446912647b2418b2852861" target="_blank">百度统计</a></p>
+    <div id="bottomMenu"><ul>
+<a href="/aboutus/" title="">关于我们</a>&nbsp;&nbsp;
+
+<a href="/aboutus/contactus/" title="">联系我们</a>&nbsp;&nbsp;
+
+<a href="/message/" title="">网站留言</a>&nbsp;&nbsp;
+</ul></div>
+  </section>
+</footer>
+<script>        
+  var mySwiper = new Swiper ('.swiper-container', {
+                    autoplay: {
+                        delay:300000,//秒            
+                        disableOnInteraction: false,//滑动不会失效
+                        reverseDirection: false,//如果最后一个 反向播放
+                    },
+                    loop: true,//轮播
+                    followFinger: false,//手指滑动完毕在动
+    // 如果需要分页器
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
+      },
+    
+    // 如果需要前进后退按钮
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })        
+  </script>
+<script src="https://www.wdja.net/common/images/theme/v2/aos/aos.js"></script>
+<script>
+    AOS.init({
+        easing: 'ease-out-back',
+        duration: 1500
+    });
+</script>
+</body>
+</html>
+<!--WDJA(1.0), Processed in 36.904 ms-->

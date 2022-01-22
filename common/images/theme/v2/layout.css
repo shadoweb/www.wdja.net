@@ -605,6 +605,30 @@ ol.view_fileds li{
   font-size: 16px;
   float: right;
 }
+@media only screen and (max-width: 900px) {
+    #top {
+      width: 100%;
+      max-width:640px;
+    }
+    #topContent {
+      WIDTH: 640px;
+      margin: 0 auto;
+    }
+    #topContent H2 {
+    width: 140px;
+    }
+    #topContent .desc {
+    width: 480px;
+    }
+    #menuContent {
+    WIDTH: 100%;
+    max-width: 640px;
+    }
+    #menu {
+    WIDTH: 100%;
+    height:auto;
+    }
+}
 .swiper {
   width:100%;
   min-width: 1200px;
@@ -685,6 +709,28 @@ ol.view_fileds li{
   opacity: 0.4;
 }
 
+@media only screen and (max-width: 900px) {
+    .swiper {
+    width: 100%;
+    min-width: 640px;
+    height:280px;
+    }
+    .swiper-container {
+    width: 100%;
+    max-width: 640px;
+    height:280px;
+    }
+    .swiper-slide img {
+    width: 100%;
+    max-width: 640px;
+    height:280px;
+    margin-left: 50%;
+    top: 0;
+    left: -320px;
+    position: absolute;
+    }
+    
+}
 
 .links{width:100%;margin:0 auto;}
 .links_con {
