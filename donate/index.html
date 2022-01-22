@@ -135,7 +135,6 @@
           var res = JSON.parse(xhr.responseText);
           if(is_mobile()){ 
             window.location = res.h5_url;
-            window.location = url;
            }else{
           document.getElementById('buy').style='display:none;';
           document.getElementById('pay').style='display:block;width:45%;margin:0 auto';
