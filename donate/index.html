@@ -82,6 +82,7 @@
             <th height="25" valign="top"></th>
             <td ><div class="title" style="width:55px;height:25px;line-height:25px;margin:0;padding:0;" onclick="buy();">去支付</div></td>
           </tr>
+          <tr id="mobile" style="display:none;"><td colspan="2"><p style="width:100%;margin:0 auto;text-align:center;">手机只支持支付宝支付.</p></td></tr>
           <tr><td colspan="2"><p style="width:100%;margin:0 auto;text-align:center;">捐助10元及以上可以进入QQ群交流,请加QQ925474725拉你入群.</p></td></tr>
         </table>
         <table width="100%" cellpadding="10" cellspacing="0" border="0" class="tableF"  id="pay" style="display:none;">
@@ -105,6 +106,7 @@
 </section>
 <script src="https://api.wdja.net/ip.php"></script>
 <script type="text/javascript">
+ if( is_mobile() ) document.getElementById('mobile').style='';
   function buy(){
     var xhr, formData;
     xhr = new XMLHttpRequest();
@@ -113,13 +115,16 @@
     var port = window.location.port ? window.location.port : 80;
     var url= domain + ':' +port
     var ip = getip.cip;
+    var type;
+    if(is_mobile() )  type = 'alipay';//手机只支持支付宝
+    else type = get_value_radio('type');
     xhr.open('POST', '//api.wdja.net/donate/?type=wxpayjs');
     formData = new FormData();
     formData.append('url', url);
     formData.append('ip', ip);
     formData.append('total_fee', get_value('total_fee'));
     formData.append('diy_total_fee', get_value('diy_total_fee'));
-    formData.append('type', get_value_radio('type'));
+    formData.append('type', type);
     formData.append('body', get_value('body'));
     xhr.send(formData);
     xhr.onreadystatechange = function() {
@@ -127,9 +132,7 @@
         var code =JSON.parse(xhr.responseText).code;
         if(code == 1){
           var res = JSON.parse(xhr.responseText);
-          if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-               window.location = res.code_url; //可以换成http地址
-          }
+          if( is_mobile() ) window.location = res.h5_url; 
           document.getElementById('buy').style='display:none;';
           document.getElementById('pay').style='display:block;width:45%;margin:0 auto';
           document.getElementById('qrcodes').src=res.qrcode;
@@ -180,6 +183,11 @@
       else alert(obj.alt + '字段不能为空');
       bool = true;
     }
+    return bool;
+  }
+  function is_mobile(){
+    var bool = false;
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) bool = true;
     return bool;
   }
   
@@ -283,4 +291,3 @@ var _hmt = _hmt || [];
 </script>
 </body>
 </html>
-<!--WDJA(1.0), Processed in 38.165 ms-->
