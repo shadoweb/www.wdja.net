@@ -106,7 +106,9 @@
 </section>
 <script src="https://api.wdja.net/ip.php"></script>
 <script type="text/javascript">
- if( is_mobile() ) document.getElementById('mobile').style='';
+  var url = location.href.replace(location.search,'');
+  if(location.search.indexOf("?") == 0) window.location = url;
+  if( is_mobile() ) document.getElementById('mobile').style='';
   function buy(){
     var xhr, formData;
     xhr = new XMLHttpRequest();
@@ -132,13 +134,17 @@
         var code =JSON.parse(xhr.responseText).code;
         if(code == 1){
           var res = JSON.parse(xhr.responseText);
-          if( is_mobile() ) window.location = res.h5_url; 
+          if(is_mobile()){ 
+            window.location = res.h5_url;
+            window.location = url;
+           }else{
           document.getElementById('buy').style='display:none;';
           document.getElementById('pay').style='display:block;width:45%;margin:0 auto';
           document.getElementById('qrcodes').src=res.qrcode;
           document.getElementById('out_trade_nos').innerHTML=res.out_trade_no;
           document.getElementById('total_fees').innerHTML=res.total_fee/100;
           document.getElementById('pay_types').innerHTML=res.pay_type;
+           }
         }
         else alert('支付异常');
       }
