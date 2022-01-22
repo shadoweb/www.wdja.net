@@ -768,6 +768,12 @@ ol.view_fileds li{
   padding: 5px;
   font-size: 14px;
 }
+@media only screen and (max-width: 900px) {
+    .links_con {
+      width:100%;
+      max-width: 640px;
+    }
+}
 .slogan{
   width:100%;
   margin:20px auto; 
@@ -828,7 +834,13 @@ ol.view_fileds li{
   top: -100px;
   position: relative;
 }
-
+@media only screen and (max-width: 900px) {
+    .slogan .slogan_con{
+      width:100%;
+      max-width: 640px;
+      margin: 30px auto;
+    }
+}
 .circleProgress_wrapper .wrapper{
   width: 50px;
   height: 100px;
@@ -945,6 +957,12 @@ ol.view_fileds li{
   text-align: center;
   color: #ffffff;
 }
+@media only screen and (max-width: 900px) {
+    .download_con{
+      width:100%;
+      max-width: 640px;
+    }
+}
 .login {WIDTH:100%;background-color:#DBE0E3}
 .login_con{
   width:1000px;
@@ -1055,13 +1073,34 @@ ol.view_fileds li{
 }
 .advantage_con ul li a{
   color:#333;
+}
 
-
+@media only screen and (max-width: 900px) {
+.advantage {
+  WIDTH:100%;
+  padding: 20px 0;
+  max-width: 640px;
+  height: auto;
+}
+.advantage_con {
+  width:1000px;
+}
+.advantage_con .title {
+  background: transparent;
+  border-radius: 5px;
+  margin: 50px auto;
+  WIDTH:100%;
+}
+.advantage_con ul li{
+  width: 48%;
+  float: left;
+  padding: 35px 0;
+  height: 150px;
+  margin: 15px 1%;
 }
 
 
-
-
+}
 
 
 .case {
@@ -1105,6 +1144,16 @@ ol.view_fileds li{
 }
 
 
+@media only screen and (max-width: 900px) {
+    #middle {
+      width: 100%;
+      max-width: 640px;
+    }
+    #middleContent,#middleContent2 {
+      width: 100%;
+      max-width: 640px;
+    }
+}
 
 #middle {
   margin-top:15px;
