@@ -255,6 +255,16 @@ textarea.t1.editor {
     height:380px;
     visibility:hidden
 }
+@media only screen and (max-width: 900px) {
+  input.i1 {
+      width:100%;
+      max-width:500px;
+  }
+  textarea.t1 {
+      width:100%;
+      max-width:500px;
+  }
+}
 .red {
     color:#f00;
 }
@@ -266,6 +276,11 @@ textarea.t1.editor {
     width:120px;
     font-weight:normal;
     text-align:right;
+}
+@media only screen and (max-width: 900px) {
+  .tableF th {
+      width:70px;
+  }
 }
 .tableF th t {
     display:inline-block;
@@ -712,24 +727,24 @@ ol.view_fileds li{
 @media only screen and (max-width: 900px) {
     .swiper {
     width: 100%;
-    min-width: 640px;
-    height:280px;
+    max-width: 640px;
+    min-width:320px;
+    height:200px;
     }
     .swiper-container {
     width: 100%;
     max-width: 640px;
-    height:280px;
+    height:200px;
     }
     .swiper-slide img {
-    width: 100%;
+    /*width: 100%;*/
     max-width: 640px;
-    height:280px;
+    height:200px;
     margin-left: 50%;
     top: 0;
     left: -320px;
     position: absolute;
     }
-    
 }
 
 .links{width:100%;margin:0 auto;}
@@ -834,13 +849,6 @@ ol.view_fileds li{
   top: -100px;
   position: relative;
 }
-@media only screen and (max-width: 900px) {
-    .slogan .slogan_con{
-      width:100%;
-      max-width: 640px;
-      margin: 30px auto;
-    }
-}
 .circleProgress_wrapper .wrapper{
   width: 50px;
   height: 100px;
@@ -917,8 +925,6 @@ ol.view_fileds li{
     -webkit-transform: rotate(225deg);
   }
 }
-
-
 .slogan ul li .slogan_info{
   margin-top: 10px;
   padding: 0 10px;
@@ -928,6 +934,17 @@ ol.view_fileds li{
   text-overflow: ellipsis;
   font-size: 14px;
 }
+@media only screen and (max-width: 900px) {
+    .slogan .slogan_con{
+      width:100%;
+      max-width: 640px;
+      margin: 30px auto;
+    }
+   .slogan ul li .slogan_info{
+      display:none;
+   }
+}
+
 .download {
   WIDTH:100%;
   background: rgb(14,40,55,0.1);
@@ -1078,17 +1095,19 @@ ol.view_fileds li{
 @media only screen and (max-width: 900px) {
 .advantage {
   WIDTH:100%;
-  padding: 20px 0;
   max-width: 640px;
+  min-width:320px;
+  padding: 20px 0;
   height: auto;
 }
 .advantage_con {
-  width:1000px;
+  WIDTH:100%;
+  max-width: 640px;
 }
 .advantage_con .title {
   background: transparent;
   border-radius: 5px;
-  margin: 50px auto;
+  margin: 30px auto;
   WIDTH:100%;
 }
 .advantage_con ul li{
@@ -1143,18 +1162,6 @@ ol.view_fileds li{
   background: url(map_bg.png) center no-repeat;
 }
 
-
-@media only screen and (max-width: 900px) {
-    #middle {
-      width: 100%;
-      max-width: 640px;
-    }
-    #middleContent,#middleContent2 {
-      width: 100%;
-      max-width: 640px;
-    }
-}
-
 #middle {
   margin-top:15px;
   padding-bottom: 60px;
@@ -1183,6 +1190,22 @@ ol.view_fileds li{
   font-size:16px;
   display: inline-block;
 }
+
+@media only screen and (max-width: 900px) {
+    #middle {
+      width: 100%;
+      max-width: 640px;
+      min-width:320px;
+    }
+    #middleContent,#middleContent2 {
+      width: 100%;
+      max-width: 640px;
+    }
+  #middleContent .title {
+    margin: 30px auto 10px auto;
+  }
+}
+
 #middleContent .product {
   float:left;
   width:240px;
@@ -1277,7 +1300,23 @@ ol.view_fileds li{
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+@media only screen and (max-width: 900px) {
+  #middleContent .news{
+  }
+  #middleContent .news dt{
+    width:98%;
+    max-width: 620px;
+    min-width:300px;
+  }
+  #middleContent .news dt span{
+  }
+  #middleContent .news dt a{
+    width:98%;
+    max-width: 620px;
+    min-width:300px;
+  }
 
+}
 #middleContent main{
   width:100%;
 }
@@ -1360,21 +1399,20 @@ ol.view_fileds li{
 .list_fields .in a:hover{color: #fff}
 
 #middle .nav{
-  margin-bottom:10px;
-  color: #535353;
-  border-bottom: #e7e7e7 solid 0px;
-  height: 42px;
-  line-height: 42px;
-  font-size: 14px;
-  padding-left: 10px;
-  background: #DBE0E3;
+    margin-bottom: 10px;
+    color: #535353;
+    border-bottom: #e7e7e7 solid 0px;
+    line-height: 20px;
+    font-size: 14px;
+    padding: 10px;
+    background: #DBE0E3;
 }
 
 .content h1{
   margin-top:10px;
   text-align: center;
-  line-height: 50px;
-  height: 50px;
+  line-height: 30px;
+  padding:10px;
   font-size:22px;
   color:#2698e4;
 }
@@ -1660,7 +1698,7 @@ ol.view_fileds li{
   margin:0 auto;
 }
 #bottomContent P {
-  MARGIN: 0px; FONT-SIZE: 14px; LINE-HEIGHT: 30px; HEIGHT: 30px; TEXT-ALIGN: center
+  MARGIN: 0px; FONT-SIZE: 14px; LINE-HEIGHT: 30px; TEXT-ALIGN: center
 }
 #bottomContent P A {
   color: #0E2838;TEXT-DECORATION: none
@@ -1676,6 +1714,17 @@ ol.view_fileds li{
 }
 #bottomMenu A:hover {
   color: #DBE0E3; TEXT-DECORATION: none
+}
+
+@media only screen and (max-width: 900px) {
+  #bottom {
+    WIDTH: 100%;
+    max-width:640px;
+    min-width:320px;
+  }
+  #bottomContent {
+    WIDTH: 100%;
+  }
 }
 
 .search_list .article{
@@ -2187,11 +2236,14 @@ ol.view_fileds li{
     padding-left:15px;
 }
 .content-list ul li a h4 {
-    display:inline-block;
     margin:10px 0;
     font-size:14px;
     line-height:1.5;
     cursor:pointer;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 .content-list ul li a h4:before {
     content:'<';
