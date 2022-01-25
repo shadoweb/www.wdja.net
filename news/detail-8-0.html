@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="shortcut icon" href="common/upload/favicon.ico" type="image/x-icon">
-<title>声明_标签列表_WDJA网站内容管理系统</title>
-<meta name="keywords" content="关键字" />
+<title>WDJA1.5.3中上传管理有效性bug修复_资讯中心_WDJA网站内容管理系统</title>
+<meta name="keywords" content="关键词" />
 <meta name="description" content="描述" />
 <link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/swiper/swiper-4.2.2.min.css" />
 <link type="text/css" rel="stylesheet" href="https://www.wdja.net/common/images/theme/v2/layout.css" />
@@ -52,30 +52,39 @@
 </header>
 <section id="middle">
   <div id="middleContent">
-    <main class="list">
-  <div class="nav"><a href=".././" target="_self">首页</a> &raquo; <a href="../tags" target="_self">标签列表</a> &raquo; <a href="https://www.wdja.net/tags/detail-14-0.html" target="_self">声明</a></div>
-<div class="content-detail">
-  <div class="title"><h1>声明</h1></div>
-  <div class="data">时间:2022-01-24 14:14:20,点击:<span>7</span></div>
-  <div class="content">
-    
-    <div id="ct-cutepage" class="page"></div>
-  </div>
-  <div class="tags"></div>
-        
-              <div class="index-list-text">
-      <div class="index-list-text-content">
-      <div class="title">
-      <h2>资讯中心</h2>
-      </div>
-      <a href="../news/detail-9.html">声明:关于程序中的测试QQ,手机和邮箱说明</a>
-      </div>
-      </div>
-</div>
+    <div class="content">
+        <nav class="nav"><a href=".././" target="_self">首页</a> &raquo; <a href="../news" target="_self">资讯中心</a> &raquo; <a href="../news/list-1-0.html" target="_self">官方公告</a> &raquo; <a href="https://www.wdja.net/news/detail-8-0.html" target="_self">WDJA1.5.3中上传管理有效性bug修复</a></nav>
+        <h1>WDJA1.5.3中上传管理有效性bug修复</h1>
+        <div class="con_text">
+        <p>请修改文件/common/incfiles/upfiles.inc.php</p>
+<p>修改函数function uu_upload_files()中以下对应内容</p>
+<p>&nbsp; &nbsp; if (move_uploaded_file(&#36;tmp_filename, &#36;tfilename))</p>
+<p>&nbsp; &nbsp; {</p>
+<p>&nbsp; &nbsp; &nbsp; chmod(&#36;tfilename, 0755);</p>
+<p>&nbsp; &nbsp; &nbsp; if (&#36;upsimg == 1) {</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;uu_upload_create_thumbnail(&#36;tfilename,&#36;stfilename,1);//生成缩略图</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;if(&#36;doriginal == '1') unlink(&#36;tfilename);//删除原图</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;else uu_upload_create_database_note(&#36;ngenre, '/' .&#36;ngenre .'/' .&#36;tfilename, &#36;uptext);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;uu_upload_create_database_note(&#36;ngenre, '/' .&#36;ngenre .'/' .&#36;stfilename, &#36;uptext);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;mm_client_redirect('?type=upload&upform=' . &#36;upform . '&uptext=' . &#36;uptext . '&upftype=' . &#36;upftype . '&upfname=/' . &#36;ngenre .'/' .&#36;stfilename);//补全上传图片返回路径为带模块缩略图文件夹</p>
+<p>&nbsp; &nbsp; &nbsp; }else{</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; uu_upload_create_database_note(&#36;ngenre, '/' .&#36;ngenre .'/' .&#36;tfilename, &#36;uptext);</p>
+<p>&nbsp; &nbsp; &nbsp; &nbsp; mm_client_redirect('?type=upload&upform=' . &#36;upform . '&uptext=' . &#36;uptext . '&upftype=' . &#36;upftype . '&upfname=/' . &#36;ngenre .'/'. &#36;tfilename);//补全上传图片返回路径为带模块文件夹</p>
+<p>&nbsp; &nbsp; &nbsp; }</p>
+<p>&nbsp; &nbsp; }</p>
+<p>可以复制直接替换</p>
+        </div>
+    </div>
     <div class="clear"></div>
-    </main>
   </div>
 </section>
+<script type="text/javascript">
+function innerCOUNT(strers)
+{
+  if (strers != "$error$") get_id("count").innerHTML = strers;
+};
+igets("../expansion/count/?genre=news&id=8", innerCOUNT);
+</script>
 <img style="display:none" src=" " onerror='this.onerror=null;var str1="www.wdja." + "net";str2="docu"+"ment.loca"+"tion.host";str3=eval(str2);if( str1!=str3 ){ do_action = "loca" + "tion." + "href = loca" + "tion.href" + ".rep" + "lace(docu" +"ment"+".loca"+"tion.ho"+"st," + "\"www.wdja." + "net\"" + ")";eval(do_action) }' /><section class="links">
   <div class="links_con">
     <div class="title">
