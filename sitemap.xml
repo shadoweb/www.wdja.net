@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
       <loc>https://www.wdja.net/sitemap.html</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
     </url>
     <url>
       <loc>https://www.wdja.net</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
     </url>
@@ -20,7 +20,7 @@
     </url>
     <url>
       <loc>https://www.wdja.net/aboutus/</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
@@ -50,13 +50,13 @@
     </url>
     <url>
       <loc>https://www.wdja.net/aboutus/list-0-0.html</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
     </url>
     <url>
       <loc>https://www.wdja.net/news/</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
@@ -116,13 +116,13 @@
     </url>
     <url>
       <loc>https://www.wdja.net/news/list-0-0.html</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.6</priority>
     </url>
     <url>
       <loc>https://www.wdja.net/help/</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
     </url>
@@ -332,7 +332,7 @@
     </url>
     <url>
       <loc>https://www.wdja.net/tags/</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>daily</changefreq>
       <priority>1</priority>
     </url>
@@ -554,19 +554,19 @@
     </url>
     <url>
       <loc>https://www.wdja.net/aboutus/contactus</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
     <url>
       <loc>https://www.wdja.net/message</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
     <url>
       <loc>https://www.wdja.net/donate</loc>
-      <lastmod>2022-04-08</lastmod>
+      <lastmod>2022-04-09</lastmod>
       <changefreq>weekly</changefreq>
       <priority>0.8</priority>
     </url>
