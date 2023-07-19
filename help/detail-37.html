@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>OSS的使用及配置_帮助中心_WDJA网站内容管理系统</title>
+    <title>修改后台管理地址的方法_帮助中心_WDJA网站内容管理系统</title>
     <meta name="keywords" content="关键字" />
-    <meta name="description" content="描述" />
+    <meta name="description" content="WDJA修改后台管理地址的方法" />
     <link rel="shortcut icon" href="common/upload/favicon.ico" type="image/x-icon">
   </head>
   <body>
@@ -449,16 +449,13 @@
 </script>
         </aside>
         <main>
-          <nav class="nav"><a href=".././" target="_self">首页</a> &raquo; <a href="../help" target="_self">帮助中心</a> &raquo; <a href="https://www.wdja.net/help/detail-21.html" target="_self">OSS的使用及配置</a></nav>
+          <nav class="nav"><a href=".././" target="_self">首页</a> &raquo; <a href="../help" target="_self">帮助中心</a> &raquo; <a href="https://www.wdja.net/help/detail-37.html" target="_self">修改后台管理地址的方法</a></nav>
           <article>
             <div class="entry-content">
               <div class="single-content">
                 <p>&nbsp;</p>
-                <p>本<a href="https://www.wdja.net/tags/detail-6.html">博客</a>程序已内置阿里云OSS功能，默认是关闭状态，如需使用，请配置启用并设置对应的OSS信息。</p>
-<p>开启后，本站上传的文件均会自动上传到阿里云OSS,并返回OSS地址。</p>
-<p>在后台公共管理 全站配置中切换到核心配置，找到OSS配置，即可进行管理。</p>
-<p>开启方法及配置请看图示：</p>
-<p><img src="/upload/2022/03/20220314110339_639.png" /></p>
+                <p>1.修改后台文件夹admin为admins<br />2.打开文件/common/incfiles/const.inc.php<br />找到<br />define('ADMIN_FOLDER','admin');<br />修改为<br />define('ADMIN_FOLDER','admins');<br />3.手工删除缓存<br />打开文件夹_CACHE，删除里面的所有缓存文件<br />4.重新登录后台即可</p>
+<p>&nbsp;</p>
                 <p>&nbsp;</p>
               </div>
               <div class="clear"></div>
@@ -466,14 +463,14 @@
             <header class="entry-header">
               <div class="single-tag"><i class="iconfont icon-tagmultiple"></i>&nbsp;</div>
               <div class="clear"></div>
-              <div class="single-meta"><span><i class="iconfont icon-openinapp"></i>&nbsp;2022-03-14 11:21:21</span> </div>
+              <div class="single-meta"><span><i class="iconfont icon-openinapp"></i>&nbsp;2023-07-19 08:25:27</span> </div>
             </header>
           </article>
         </main>
       </div>
     </div>
     <script>
-      var id='id21';
+      var id='id37';
       findul(id);
       function findul(id){
         var obj = document.getElementById(id) ;
